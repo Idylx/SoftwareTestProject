@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace InputOutput
 {
-    public class InputOutput
+    public class InputOutputAccess
     {
         //Load image method
         public Bitmap readImage()

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace InputOutput
 {
-    interface IInputOutput
+    public interface IInputOutput
     {
         Bitmap readImage();
         bool writeImage(Bitmap bitmap);
