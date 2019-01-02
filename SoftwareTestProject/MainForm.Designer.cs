@@ -25,7 +25,7 @@
             this.picPreview = new System.Windows.Forms.PictureBox();
             this.btnOpenOriginal = new System.Windows.Forms.Button();
             this.btnSaveNewImage = new System.Windows.Forms.Button();
-            this.cmbEdgeDetection = new System.Windows.Forms.ComboBox();
+            this.comboEdgeDetection = new System.Windows.Forms.ComboBox();
             this.comboFilterApplication = new System.Windows.Forms.ComboBox();
             this.procedureLabel = new System.Windows.Forms.Label();
             this.edgeDetectionLabel = new System.Windows.Forms.Label();
@@ -65,20 +65,21 @@
             this.btnSaveNewImage.TabIndex = 16;
             this.btnSaveNewImage.Text = "Save Image";
             this.btnSaveNewImage.UseVisualStyleBackColor = true;
+            this.btnSaveNewImage.Click += new System.EventHandler(this.btnSaveNewImage_Click);
             // 
             // cmbEdgeDetection
             // 
-            this.cmbEdgeDetection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEdgeDetection.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbEdgeDetection.FormattingEnabled = true;
-            this.cmbEdgeDetection.Items.AddRange(new object[] {
+            this.comboEdgeDetection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboEdgeDetection.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboEdgeDetection.FormattingEnabled = true;
+            this.comboEdgeDetection.Items.AddRange(new object[] {
             "None",
             "Laplacian 5x5 of Gaussian 5x5 - 1",
             "Prewitt Grayscale"});
-            this.cmbEdgeDetection.Location = new System.Drawing.Point(316, 658);
-            this.cmbEdgeDetection.Name = "cmbEdgeDetection";
-            this.cmbEdgeDetection.Size = new System.Drawing.Size(170, 32);
-            this.cmbEdgeDetection.TabIndex = 20;
+            this.comboEdgeDetection.Location = new System.Drawing.Point(316, 658);
+            this.comboEdgeDetection.Name = "cmbEdgeDetection";
+            this.comboEdgeDetection.Size = new System.Drawing.Size(170, 32);
+            this.comboEdgeDetection.TabIndex = 20;
             // 
             // comboFilterApplication
             // 
@@ -87,13 +88,13 @@
             this.comboFilterApplication.FormattingEnabled = true;
             this.comboFilterApplication.Items.AddRange(new object[] {
             "None",
-            "Magic Mosaic",
             "Black and White",
             "Rainbow Filter"});
             this.comboFilterApplication.Location = new System.Drawing.Point(137, 658);
             this.comboFilterApplication.Name = "comboFilterApplication";
             this.comboFilterApplication.Size = new System.Drawing.Size(170, 32);
             this.comboFilterApplication.TabIndex = 16;
+            this.comboFilterApplication.SelectedIndexChanged += new System.EventHandler(this.comboFilterApplication_SelectedIndexChanged);
             // 
             // procedureLabel
             // 
@@ -124,7 +125,7 @@
             this.Controls.Add(this.edgeDetectionLabel);
             this.Controls.Add(this.procedureLabel);
             this.Controls.Add(this.comboFilterApplication);
-            this.Controls.Add(this.cmbEdgeDetection);
+            this.Controls.Add(this.comboEdgeDetection);
             this.Controls.Add(this.btnOpenOriginal);
             this.Controls.Add(this.picPreview);
             this.DoubleBuffered = true;
@@ -144,7 +145,7 @@
         private System.Windows.Forms.PictureBox picPreview;
         private System.Windows.Forms.Button btnOpenOriginal;
         private System.Windows.Forms.Button btnSaveNewImage;
-        private System.Windows.Forms.ComboBox cmbEdgeDetection;
+        private System.Windows.Forms.ComboBox comboEdgeDetection;
         private System.Windows.Forms.ComboBox comboFilterApplication;
         private System.Windows.Forms.Label procedureLabel;
         private System.Windows.Forms.Label edgeDetectionLabel;

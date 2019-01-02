@@ -16,7 +16,7 @@ namespace BusinessLayer
 {
     public static class ExtBitmap
     {
-        public static Bitmap CopyToSquareCanvas(this Bitmap sourceBitmap, int canvasWidthLenght)
+        public static Bitmap resize(this Bitmap sourceBitmap, int canvasWidthLenght)
         {
             float ratio = 1.0f;
             int maxSide = sourceBitmap.Width > sourceBitmap.Height ?

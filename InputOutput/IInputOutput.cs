@@ -9,7 +9,7 @@ namespace InputOutput
 {
     public interface IInputOutput
     {
-        Bitmap readImage();
-        bool writeImage(Bitmap bitmap);
+        Bitmap readImage(string filename);
+        bool writeImage(Bitmap bitmap, string filename);
     }
 }
